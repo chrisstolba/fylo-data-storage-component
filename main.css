@@ -1,0 +1,223 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/*
+  Mobile Layout Width = 375px
+  Desktop Max Width = 1440px
+*/
+
+:root {
+  --pale-blue: hsl(243, 100%, 93%);
+  --gray-blue: hsl(229, 7%, 55%);
+  --dark-blue: hsl(228, 56%, 26%);
+  --very-dark-blue: hsl(229, 57%, 11%);
+  --gradient-start: hsl(6, 10%, 80%);
+  --gradient-end: hsl(355, 100%, 65%);
+}
+
+body {
+  height: 100vh;
+  background-color: var(--very-dark-blue);
+  background-image: url(images/bg-desktop.svg); 
+  background-position: left bottom;
+  background-size: 100% 52%;
+  background-repeat: no-repeat;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Raleway, serif; 
+  color: white;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: auto auto;
+  justify-items:center;
+  justify-content: center;
+  align-self: center;
+}
+
+.bannerMenu {
+  box-sizing: border-box;
+  width: 350px;
+  height: 200px;
+  padding-left: 40px;
+  background-color: var(--dark-blue);
+  border-radius: 10px;
+  border-top-right-radius: 100px;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-gap: 30px;
+  align-content:center;
+}
+
+.logo {
+  background-image: url(images/logo.svg);
+  width: 135px;
+  height: 40px;
+}
+
+.buttonContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 15px;
+  justify-content: left;
+}
+
+.menuButton {
+  background-color: var(--very-dark-blue);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.document {
+  background-image: url(images/icon-document.svg);
+}
+
+.folder {
+  background-image: url(images/icon-folder.svg);
+}
+
+.upload {
+  background-image: url(images/icon-upload.svg);
+}
+
+.progressBarOuterContainer {
+  align-self: end;
+  box-sizing: border-box;
+  background-color: var(--dark-blue);
+  width: 535px;
+  height: 150px;
+  border-radius: 10px;
+  padding: 40px;
+  color: var(--gray-blue);
+}
+
+.progressBarInnerContainer {
+  display:grid;
+}
+
+.progressBarText {
+  padding-bottom: 15px;
+  margin:0;
+}
+
+.dataLeft {
+  font-weight: 700;
+  color: var(--pale-blue);
+}
+
+.progressBar {
+  background-color: var(--very-dark-blue); 
+  height: 20px;
+  border-radius: 10px;
+  margin-bottom: 7px;
+}
+
+.progressFill {
+  margin:3px;
+  height: 14px;
+  width: 81.5%;
+  border-radius: 7px;
+  background-color: red;
+  background-image: linear-gradient(to right, var(--gradient-start), var(--gradient-end) );
+}
+
+.progressBall {
+  height: 10px;
+  width: 10px;
+  margin: 2px;
+  float: right;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.progressBarMinMaxValues {
+  display: grid;
+  grid-template-columns: auto auto;
+  font-size: 12px;
+  color: var(--pale-blue);
+}
+
+.progressBarMin {
+  justify-self:left;
+}
+
+.progressBarMax {
+  justify-self: right;
+}
+
+.progressCurrentStatus {
+  background-color: white;
+  width: 180px;
+  height: 75px;
+  border-radius: 10px;
+  border-bottom-right-radius: 0px;
+  color: var(--gray-blue);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 75px;
+  letter-spacing: 1.5px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  position:relative;
+  right: -275px;
+  top: -160px;
+}
+
+.progressCurrentStatusSpan {
+  color: black;
+  font-size: 40px;
+}
+
+.progressCurrentStatus::after {
+  content: "";
+  position: relative;
+  top: -10px;
+  right: -140px;
+  width :0px;
+  height:0px;
+  border-left: 20px solid transparent;
+  border-top: 20px solid white;
+}
+
+@media only screen and (max-width:1000px) {
+  body {
+    min-width: 375px;
+    background-image: url(images/bg-mobile.svg); 
+    background-size: cover;
+  }
+
+  .wrapper {
+    grid-template-columns: auto;
+  }
+
+  .bannerMenu, .progressBarOuterContainer {
+    width: 325px; 
+  }
+
+  .progressBarOuterContainer {
+    height: 170px;
+    padding-bottom: 60px;
+  }
+
+  .progressCurrentStatus {
+    border-bottom-right-radius: 10px;
+    top: 20px;
+    right: -32.5px;
+  }
+  
+  .progressCurrentStatus::after {
+    display: none;
+  }
+}
+
